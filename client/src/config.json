@@ -1,4 +1,4 @@
 {
-  "apiEndpoint": "http://80.249.151.192/api",
+  "apiEndpoint": "http://192.168.1.79/api",
   "isFireBase": false
 }
