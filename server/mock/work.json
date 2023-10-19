@@ -1,0 +1,216 @@
+[
+  {
+    "_id": "-k3DKfafsC1PqE5YgDdKB",
+    "name": "Кнопка вкл/выкл подсветки",
+    "sum": 200
+  },
+  {
+    "_id": "2EhYFvO2FnWygcDin8_F6",
+    "name": "Крупногабаритный > 55",
+    "sum": 2000
+  },
+  {
+    "_id": "5N1dg3lLfo5N8c3hV1B43",
+    "name": "Мешок для денег 2шт",
+    "sum": 2000
+  },
+  {
+    "_id": "AEGpFvJwsz2VAX8TAy0S3",
+    "name": "Монтаж авто колонок",
+    "sum": 800
+  },
+  {
+    "_id": "Bi6bJFgDwc04OXLdUhdvW",
+    "name": "Монтаж монитора",
+    "sum": 400
+  },
+  {
+    "_id": "BoadKbSMVE-UJWcWoa8gR",
+    "name": "Монтаж микрофона(сложный)",
+    "sum": 1000
+  },
+  {
+    "_id": "DG6Octi8KNr2YY3koaDtl",
+    "name": "Разборка/сборка корпуса на покраску",
+    "sum": 400
+  },
+  {
+    "_id": "DzIGYcMuYOgfCOUoK8WiI",
+    "name": "Монтаж микрофона (легкий)",
+    "sum": 400
+  },
+  {
+    "_id": "ExbXu_UhMB-dhv8sSfDAa",
+    "name": "Монтаж БП",
+    "sum": 200
+  },
+  {
+    "_id": "FcpiEyARNGbxgKEbsuBFb",
+    "name": "Монтаж колесиков 4шт",
+    "sum": 800
+  },
+  {
+    "_id": "G1yQyqhHI-NjcIkyLZL6n",
+    "name": "Замена процессора",
+    "sum": 400
+  },
+  {
+    "_id": "IAe73tlYac-oXDOij2is7",
+    "name": "Монтаж Wi-Fi",
+    "sum": 500
+  },
+  {
+    "_id": "IZweYs_d5SI5cc44TKG3M",
+    "name": "Монтаж клавиатуры",
+    "sum": 500
+  },
+  {
+    "_id": "JhQH48GiURwTG9RzYttBc",
+    "name": "Монтаж мат. платы",
+    "sum": 400
+  },
+  {
+    "_id": "T9oh_TpwJYup9kwBWDCHv",
+    "name": "Монтаж USB 3.0 (пропил 2-х от-й)",
+    "sum": 600
+  },
+  {
+    "_id": "TcFhShkHWzI8kL57yN5VD",
+    "name": "Без доработок",
+    "sum": 0
+  },
+  {
+    "_id": "ULa4bup4yg9qluazEqR5V",
+    "name": "Врезка XLR ",
+    "sum": 200
+  },
+  {
+    "_id": "VOsR1MnpvJRK2Bc2Z2xaV",
+    "name": "Монтаж колонок (крепление колонок и просверливание отверстий)",
+    "sum": 400
+  },
+  {
+    "_id": "Y8BXX14cXgH_sRUXR9x3X",
+    "name": "Монтаж AV, AUX",
+    "sum": 400
+  },
+  {
+    "_id": "ZAoM6P6Z5M0bNb5MfjlHa",
+    "name": "HDMI круглый",
+    "sum": 200
+  },
+  {
+    "_id": "ZRa1-G6SJCkVBBTVxgbQs",
+    "name": "Монтаж датчика движения",
+    "sum": 400
+  },
+  {
+    "_id": "ZqN6VJxYAlynZ7Zljubdd",
+    "name": "Монтаж камеры",
+    "sum": 500
+  },
+  {
+    "_id": "aK3cQpVFk5bpoW1GfE4pv",
+    "name": "Монтаж БП и ЖД",
+    "sum": 400
+  },
+  {
+    "_id": "aPksX8yAE1ySGwZukCiIm",
+    "name": "Монтаж USB 2.0 (пропил 1-ого отверстия)",
+    "sum": 300
+  },
+  {
+    "_id": "bWTITWR9py05EW3J5ECdh",
+    "name": "Монтаж TG2480 (пропил и кронштейн)",
+    "sum": 600
+  },
+  {
+    "_id": "ba4eqH2wIM6ZjiClOWCks",
+    "name": "Датчик ТВ",
+    "sum": 200,
+    "update_at": 1692724686383
+  },
+  {
+    "_id": "fDziBuzkLk6FNQmc6eHHi",
+    "name": "Wi-Fi (отверстие)",
+    "sum": 200,
+    "update_at": 1692724710761
+  },
+  {
+    "_id": "gq0nfyICUq5hTzafjnvtf",
+    "name": "Сейф под мешок (Пропилил, и салазки)",
+    "sum": 400
+  },
+  {
+    "_id": "iPwx7c_BziBdatL8SOuK3",
+    "created_at": 1692649885546,
+    "name": "Старт ключ (большой)",
+    "sum": 150,
+    "update_at": 1692726118197
+  },
+  {
+    "_id": "m6dPeXPnZTqPqcMUYBtGb",
+    "name": "EC320",
+    "sum": 200
+  },
+  {
+    "_id": "nqclLovvOckpdiR_h0K_U",
+    "name": "Монтаж USB 3.0 (пропил 1-ого от-я)",
+    "sum": 300
+  },
+  {
+    "_id": "nwoDd2bUg9yqyGqyEoYmU",
+    "name": "Монтаж RJ45",
+    "sum": 200
+  },
+  {
+    "_id": "sKJlVJt-61gqEfgLH9V7N",
+    "name": "Монтаж БП принтера",
+    "sum": 200
+  },
+  {
+    "_id": "t8IWnCvu-VYI2rDZXED_N",
+    "name": "Монтаж ИБП",
+    "sum": 400
+  },
+  {
+    "_id": "tMiDoqgPjNcqbov6XyrZ9",
+    "name": "Монтаж VKP 80",
+    "sum": 400
+  },
+  {
+    "_id": "tWXzR_m4vozF2-QHqXpRh",
+    "name": "Монтаж считывателя",
+    "sum": 400
+  },
+  {
+    "_id": "vZ7TodOCga-dQP1KdBuKZ",
+    "name": "Монтаж принтера SNBC BK-T080R",
+    "sum": 400
+  },
+  {
+    "_id": "w965ao1RSiwinA0OdbOhI",
+    "name": "Замена мат. платы",
+    "sum": 400
+  },
+  {
+    "_id": "wV0zqdy_DXFW1AB6RJMuK",
+    "name": "Крупногабаритный",
+    "sum": 1000
+  },
+  {
+    "_id": "xi64gNZjclVoqYR9205xA",
+    "name": "Монтаж БП телевизора",
+    "sum": 400
+  },
+  {
+    "_id": "zdYt5tGO6HL726u4ZpyV0",
+    "name": "Монтаж подсветки",
+    "sum": 400
+  },
+  {
+    "_id": "zsfUxcpFY7ymnOIAxeSow",
+    "name": "Монтаж микрофона (xlr, вкл/выкл, регулятор громкости)",
+    "sum": 600
+  }
+]
