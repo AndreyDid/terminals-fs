@@ -229,7 +229,7 @@ const CreateTerminal = () => {
                                 onChange={handleChangeEnd}
                                 increment={handleIncrement}
                                 placeholder='До'
-                                error={errors.number}
+                                // error={errors.number}
                             />
                         </div>
                         <TextField
