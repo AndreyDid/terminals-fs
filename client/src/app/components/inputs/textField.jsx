@@ -15,7 +15,7 @@ const TextField = ({id, placeholder, label, type, name, value, onChange, error, 
     const getInputClasses = () => {
         return 'form-control ' + (error ? 'is-invalid z-n1' : '')
     }
-
+    console.log(error)
     return (
         <div className='mb-4'>
             <div className="form-label" style={{paddingTop: (!label ? 24 : 0)}}>{label}</div>
