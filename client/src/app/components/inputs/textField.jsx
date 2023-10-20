@@ -53,7 +53,6 @@ const TextField = ({id, placeholder, label, type, name, value, onChange, error, 
                         <span className='text-secondary'>+1</span>
                     </button>
                 )}
-                {error && <p className="invalid-feedback">{error}</p>}
             </div>
         </div>
     )

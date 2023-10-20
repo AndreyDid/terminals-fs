@@ -14,6 +14,8 @@ import axios from "../../../axios";
 
 const CreateTerminal = () => {
     const inputFileRef = useRef(null)
+    const [imageUrl, setImageUrl] = useState(null)
+
     const [data, setData] = useState({
         month: '',
         year: '',
@@ -24,8 +26,6 @@ const CreateTerminal = () => {
         works: '',
         sum: ''
     })
-
-    const [imageUrl, setImageUrl] = useState(null)
 
     const [numberTo, setNumberTo] = useState({
         number: ''
@@ -215,7 +215,7 @@ const CreateTerminal = () => {
                                     value={data.number}
                                     onChange={handleChangeStart}
                                     placeholder='От'
-                                    // error={errors.number}
+                                    error={errors.number}
                                     // count={true}
                                     // increment={handleIncrement}
                                 />
@@ -229,7 +229,7 @@ const CreateTerminal = () => {
                                 onChange={handleChangeEnd}
                                 increment={handleIncrement}
                                 placeholder='До'
-                                // error={errors.number}
+                                error={errors.number}
                             />
                         </div>
                         <TextField

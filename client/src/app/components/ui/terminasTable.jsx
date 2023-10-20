@@ -76,15 +76,16 @@ const TerminalsTable = ({terminals, extraWorks}) => {
     //--- Кол-во терминалов и сумма всех терминалов и доработок---
     const terminalCount = filteredTerminal.length
 
-    const allPrice = filteredTerminal.map(s => s.sum)
-    const allPriceExtraWorks = filteredExtraWorks.map(e => e.sum)
-    const allSumPrice = sumPrice(allPrice)
-    const allExtraWorkSumPrice = sumPrice(allPriceExtraWorks)
+    const filterSumAllPrice = filteredTerminal.map(s => s.sum)
+    const filterSumAllPriceExtraWorks = filteredExtraWorks.map(e => e.sum)
+    const sumAllTermPrice = sumPrice(filterSumAllPrice)
+    const allExtraWorkSumPrice = sumPrice(filterSumAllPriceExtraWorks)
 
     const percent = 5
-    const worksSumPrice = filteredExtraWorks.length > 0 ? allSumPrice + (selectedMonth === null ? allExtraWorkSumPrice : Number(filteredExtraWorks[0].sum)) : allSumPrice + 0
+    const worksSumPrice = filteredExtraWorks.length > 0 ? sumAllTermPrice + (selectedMonth === null ? allExtraWorkSumPrice : Number(filteredExtraWorks[0].sum)) : sumAllTermPrice + 0
 
     const result = worksSumPrice / 100 * percent
+
     //--------------------------------------------------
 
     const handleClick = (id) => {
@@ -112,7 +113,7 @@ const TerminalsTable = ({terminals, extraWorks}) => {
     const checkBtn = () => {
         setBtnOn(!btnOn)
     }
-
+    console.log(filteredExtraWorks)
     return (
         <div className='container flex-column mt-2'>
             <div className='d-flex justify-content-between'>
@@ -279,7 +280,7 @@ const TerminalsTable = ({terminals, extraWorks}) => {
                     </th>
                     <th>{terminalCount}</th>
                     <th colSpan='3' className='text-end'>
-                        {allSumPrice} + {filteredExtraWorks.length > 0 ? (selectMonth !== null ? allExtraWorkSumPrice : filteredExtraWorks[0].sum) : 0} = {(selectMonth !== null ? allSumPrice + allExtraWorkSumPrice : allSumPrice + filteredExtraWorks[0].sum)} -
+                        {sumAllTermPrice} + {allExtraWorkSumPrice} = {sumAllTermPrice + allExtraWorkSumPrice} -
                         5%({result})
                         = {worksSumPrice - result}
                     </th>

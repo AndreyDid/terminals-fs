@@ -8,7 +8,6 @@ const InfoPage = () => {
 
     const info = useSelector(getInfo())
     const infoLoading = useSelector(getInfoLoadingStatus())
-
     return (
         <div className='container justify-content-center'>
             <div className='flex-column'>
@@ -21,7 +20,7 @@ const InfoPage = () => {
                         info={i.info}
                         id={i._id}
                         title={i.title}
-                        urlImg={i.image}
+                        urlImg={i.imageUrl}
                     />
                 ))}
             </div>

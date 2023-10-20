@@ -7,7 +7,6 @@ const InfoCard = ({urlImg, title, info, id}) => {
     const handleClickInfo = (id) => {
         history.push(`${id}/editInfo`)
     }
-
     return (
         <div className='border mb-2'>
             <div className='d-flex position-relative'>
@@ -18,7 +17,7 @@ const InfoCard = ({urlImg, title, info, id}) => {
                         onClick={() => handleClickInfo(id)}
                     />
                 </div>
-                <img src={urlImg} alt={urlImg} className='object-fit-sm-contain border me-2 w-25'/>
+                <img src={`http://82.148.18.40${urlImg}`} alt={urlImg} className='object-fit-sm-contain border me-2 w-25'/>
                 <div>
                     <h5 className='mt-2'>{title}</h5>
                     <hr/>
