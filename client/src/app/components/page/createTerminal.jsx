@@ -215,7 +215,7 @@ const CreateTerminal = () => {
                                     value={data.number}
                                     onChange={handleChangeStart}
                                     placeholder='От'
-                                    error={errors.number}
+                                    // error={errors.number}
                                     // count={true}
                                     // increment={handleIncrement}
                                 />
