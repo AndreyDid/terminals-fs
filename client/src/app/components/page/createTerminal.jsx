@@ -202,7 +202,7 @@ const CreateTerminal = () => {
                             )}
                         </div>
                         {imageUrl && (
-                            <img className='img-thumbnail mb-2' src={`http://localhost:8080${imageUrl}`}
+                            <img className='img-thumbnail mb-2' src={`http://82.148.18.40${imageUrl}`}
                                  alt="Uploaded"/>
                         )}
                         <div className='d-flex'>

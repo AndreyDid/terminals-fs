@@ -189,7 +189,7 @@ const EditTerminalPage = () => {
                                 data={data}
                                 handleChange={handleChange}
                             />
-                            <img className='img-thumbnail' src={`http://localhost:8080${data.imageUrl}`} alt={data.imageUrl}/>
+                            <img className='img-thumbnail' src={`http://82.148.18.40${data.imageUrl}`} alt={data.imageUrl}/>
                             <TextField
                                 type='number'
                                 count={true}
