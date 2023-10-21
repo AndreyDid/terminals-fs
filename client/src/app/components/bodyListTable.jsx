@@ -7,8 +7,6 @@ import _ from "lodash";
 const BodyListTable = () => {
     const {dispatch, bodies, bodiesLoading} = useTerminals()
 
-    console.log(bodies)
-
     const filterBodyName = _.orderBy(bodies, ['name'], ['asc'])
     const handleDelete = (id) => {
         dispatch(removeBody(id))

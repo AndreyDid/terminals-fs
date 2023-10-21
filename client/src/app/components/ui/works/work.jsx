@@ -7,7 +7,7 @@ const Work = ({name, sum, _id, isLoggedIn}) => {
 
     const handleClick = (id) => {
         // history.push(history.location.pathname + `/${id}/editWork`)
-        isLoggedIn && history.push(history.location.pathname + `${id}/editWork`)
+        !isLoggedIn && history.push(history.location.pathname + `${id}/editWork`)
     }
     return (
         <button className={classes.work} onClick={() => handleClick(_id)}>
