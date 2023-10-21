@@ -44,7 +44,7 @@ const CreateInfo = () => {
         const isValid = validate();
         if (!isValid) return;
         dispatch(createInfo({...data, imageUrl: imageUrl,}));
-        // history.push('/')
+        history.goBack()
     };
 
     const handleChangeFile = async (event) => {

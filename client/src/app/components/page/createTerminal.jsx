@@ -16,6 +16,8 @@ const CreateTerminal = () => {
     const inputFileRef = useRef(null)
     const [imageUrl, setImageUrl] = useState(null)
 
+    const [value, setValue] = useState('')
+
     const [data, setData] = useState({
         month: '',
         year: '',
@@ -133,7 +135,6 @@ const CreateTerminal = () => {
             const allWorksPrice = sumPrice(worksPrice)
             const isValid = validate();
             if (!isValid) return;
-            history.goBack()
             const orderId = nanoid()
             for (let i = Number(data.number); i <= numberTo.number; i++) {
                 const newData = {
@@ -145,8 +146,10 @@ const CreateTerminal = () => {
                     body: data.body.value,
                     sum: data.body.label === 'ПГИ' ? Number(sumPgiDefault) + allWorksPrice : Number(sumTerminalDefault) + allWorksPrice
                 }
+                setValue(i)
                 await dispatch(createTerminal({...newData}));
             }
+            history.goBack()
         };
 
         const handleChangeFile = async (event) => {
@@ -270,24 +273,28 @@ const CreateTerminal = () => {
                             onChange={handleChange}
                             error={errors.sum}
                         />
-                        <div className="d-flex justify-content-between">
-                            <Button
-                                type="submit"
-                                color="light"
-                                rounded="rounded-1"
-                                border="border"
-                                label="OK"
-                                disabled={!isValid}
-                            />
-                            <Button
-                                type="button"
-                                color="light"
-                                onClick={() => history.goBack()}
-                                icon={<i className="bi bi-x-lg"></i>}
-                                border='border'
-                                rounded="rounded-1"
-                            />
-                        </div>
+                        {!value ? (
+                            <div className="d-flex justify-content-between">
+                                <Button
+                                    type="submit"
+                                    color="light"
+                                    rounded="rounded-1"
+                                    border="border"
+                                    label="OK"
+                                    disabled={!isValid}
+                                />
+                                <Button
+                                    type="button"
+                                    color="light"
+                                    onClick={() => history.goBack()}
+                                    icon={<i className="bi bi-x-lg"></i>}
+                                    border='border'
+                                    rounded="rounded-1"
+                                />
+                            </div>
+                        ) : (
+                            <p>Загружено терминалов: {value}</p>
+                        )}
                     </form>
                 )}
             </ContainerFormWrapper>

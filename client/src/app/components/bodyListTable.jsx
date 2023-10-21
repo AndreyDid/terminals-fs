@@ -16,7 +16,7 @@ const BodyListTable = () => {
         <>
             {!bodiesLoading && (
                 <table className='table'>
-                    <tbody>
+                    <tbody className='bg-light'>
                     {filterBodyName.map(body => (
                         <tr key={body._id}>
                             <td>{body.name}</td>

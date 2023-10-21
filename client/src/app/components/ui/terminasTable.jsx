@@ -93,10 +93,10 @@ const TerminalsTable = ({terminals, extraWorks}) => {
         history.push(history.location.pathname + `${id}/editTerminal`)
     }
 
-    const handleClickTerminalInfo = (id) => {
-        // history.push(history.location.pathname + `/${id}/editTerminal`)
-        history.push(history.location.pathname + `${id}/terminalInfo`)
-    }
+    // const handleClickTerminalInfo = (id) => {
+    //     // history.push(history.location.pathname + `/${id}/editTerminal`)
+    //     history.push(history.location.pathname + `${id}/terminalInfo`)
+    // }
 
     const handleClickExtraWorks = (id) => {
         history.push(history.location.pathname + `${id}/editExtraWorks`)
@@ -104,7 +104,7 @@ const TerminalsTable = ({terminals, extraWorks}) => {
 
     const handleDelete = (orderId) => {
         const order = filteredTerminal.filter(order => order.singleOrder === orderId)
-        console.log('delete order', order)
+        // console.log('delete order', order)
         for (const items of order) {
             dispatch(removeTerminal(items._id))
         }
@@ -113,7 +113,6 @@ const TerminalsTable = ({terminals, extraWorks}) => {
     const checkBtn = () => {
         setBtnOn(!btnOn)
     }
-    console.log(filteredExtraWorks)
     return (
         <div className='container flex-column mt-2'>
             <div className='d-flex justify-content-between'>
