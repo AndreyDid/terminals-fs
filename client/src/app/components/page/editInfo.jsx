@@ -66,56 +66,55 @@ const EditInfo = () => {
         <>
             {!isLoading && (
                 <ContainerFormWrapper>
-                        <form onSubmit={handleSubmit}>
-                            <div className='d-flex justify-content-between'>
-                                <div className='d-flex align-items-center justify-content-end'>
-                                    <Button
-                                        type='button'
-                                        color='danger'
-                                        size='btn-sm'
-                                        rounded='rounded-1'
-                                        icon={<i className="bi bi-trash"></i>}
-                                        onClick={() => handleDelete(currentInfo._id)}
-                                    />
-                                </div>
-                            </div>
-                            <img className='img-thumbnail' src={`http://82.148.18.40${data.imageUrl}`}
-                                 alt={data.imageUrl}/>
-                            <TextField
-                                label='Заголовок'
-                                type='text'
-                                name='title'
-                                value={data.title}
-                                onChange={handleChange}
-                                error={errors.title}
+                    <form onSubmit={handleSubmit}>
+                        <div className='d-flex justify-content-end mb-4'>
+                            <Button
+                                type='button'
+                                color='danger'
+                                size='btn-sm'
+                                rounded='rounded-1'
+                                icon={<i className="bi bi-trash"></i>}
+                                onClick={() => handleDelete(currentInfo._id)}
                             />
-                            <TextAreaField
-                                label='Описание'
-                                type='text'
-                                name='info'
-                                value={data.info}
-                                onChange={handleChange}
-                                error={errors.info}
+                        </div>
+                        <img className='img-thumbnail mb-2'
+                             src={data.imageUrl !== undefined ? `http://82.148.18.40${data.imageUrl}` : '/images/no_img.jpg'}
+                             alt={data.imageUrl}/>
+                        <TextField
+                            label='Заголовок'
+                            type='text'
+                            name='title'
+                            value={data.title}
+                            onChange={handleChange}
+                            error={errors.title}
+                        />
+                        <TextAreaField
+                            label='Описание'
+                            type='text'
+                            name='info'
+                            value={data.info}
+                            onChange={handleChange}
+                            error={errors.info}
+                        />
+                        <div className="d-flex justify-content-between">
+                            <Button
+                                type="submit"
+                                color="light"
+                                rounded="rounded-1"
+                                border="border"
+                                label="OK"
+                                disabled={!isValid}
                             />
-                            <div className="d-flex justify-content-between">
-                                <Button
-                                    type="submit"
-                                    color="light"
-                                    rounded="rounded-1"
-                                    border="border"
-                                    label="OK"
-                                    disabled={!isValid}
-                                />
-                                <Button
-                                    type="button"
-                                    color="light"
-                                    icon={<i className="bi bi-x-lg"></i>}
-                                    border='border'
-                                    rounded="rounded-1"
-                                    onClick={() => history.goBack()}
-                                />
-                            </div>
-                        </form>
+                            <Button
+                                type="button"
+                                color="light"
+                                icon={<i className="bi bi-x-lg"></i>}
+                                border='border'
+                                rounded="rounded-1"
+                                onClick={() => history.goBack()}
+                            />
+                        </div>
+                    </form>
                 </ContainerFormWrapper>
             )}
         </>

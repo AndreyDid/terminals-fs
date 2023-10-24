@@ -10,7 +10,9 @@ import useTerminals from "../../hooks/useTerminals";
 import history from "../../utils/history";
 import PropTypes from "prop-types";
 import Select from "react-select";
-import {removeTerminal} from "../../store/terminals";
+import {createTerminal, removeTerminal, updateTerminal} from "../../store/terminals";
+import Modal from "../modal";
+import CreateTerminal from "../page/createTerminal";
 
 const TerminalsTable = ({terminals, extraWorks}) => {
     const [btnOn, setBtnOn] = useState(true)
@@ -87,7 +89,6 @@ const TerminalsTable = ({terminals, extraWorks}) => {
     const result = worksSumPrice / 100 * percent
 
     //--------------------------------------------------
-
     const handleClick = (id) => {
         // history.push(history.location.pathname + `/${id}/editTerminal`)
         history.push(history.location.pathname + `${id}/editTerminal`)
@@ -110,8 +111,14 @@ const TerminalsTable = ({terminals, extraWorks}) => {
         }
     }
 
+    const [showModal, setShowModal] = useState(false)
+
+    const handleShowModal = () => {
+        setShowModal((prevState) => !prevState)
+    }
+
     const checkBtn = () => {
-        setBtnOn(!btnOn)
+        setBtnOn((prevState) => !prevState)
     }
     return (
         <div className='container flex-column mt-2'>
@@ -185,8 +192,29 @@ const TerminalsTable = ({terminals, extraWorks}) => {
                             </span>
                         </Link>
                     </th>
-                    <th scope="col">Цена</th>
-                    <th scope="col"></th>
+                    <th scope='row' colSpan='3'>
+                        {!showModal && (
+
+                            <button className='btn btn-light border btn-sm fw-bold' onClick={handleShowModal}>
+                                Цена
+                            </button>
+
+                        )}
+                        {showModal && (
+                            <Modal terminals={filteredTerminal} showModal={showModal} setShowModal={setShowModal}
+                                   dispatch={dispatch}
+                                   setting={setting}/>
+                            )}
+                            </th>
+                        <th scope="col"></th>
+                        {/*{showModal ?*/}
+                        {/*    <th scope="col">*/}
+                        {/*        <Modal terminals={filteredTerminal} showModal={showModal} dispatch={dispatch}*/}
+                        {/*               setting={setting}/>*/}
+                        {/*    </th>*/}
+                        {/*    :*/}
+                        {/*    <th scope="col">Цена</th>*/}
+                        {/*}*/}
                 </tr>
                 </thead>
                 <tbody>
@@ -294,10 +322,10 @@ const TerminalsTable = ({terminals, extraWorks}) => {
                 </tbody>
             </table>
         </div>
-    )
+)
 }
 TerminalsTable.propTypes = {
     terminals: PropTypes.array,
-    extraWorks: PropTypes.array,
+    extraWorks: PropTypes.array
 }
 export default TerminalsTable

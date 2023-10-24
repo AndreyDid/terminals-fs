@@ -54,7 +54,7 @@ const CreateSetting = () => {
         e.preventDefault();
         const isValid = validate();
         if (!isValid) return;
-        dispatch(updateSetting({...data}));
+        dispatch(updateSetting({...data, sumTerminal: Number(data.sumTerminal), sumPgi: Number(data.sumPgi)}));
         history.goBack()
     };
     return (
@@ -66,7 +66,7 @@ const CreateSetting = () => {
                             label='Стоимость сборки терминала по умолчанию'
                             name='sumTerminal'
                             type='number'
-                            value={Number(data.sumTerminal)}
+                            value={data.sumTerminal}
                             onChange={handleChange}
                             error={errors.sumTerminal}
                         />
@@ -74,7 +74,7 @@ const CreateSetting = () => {
                             label='Стоимость сборки ПГИ по умолчанию'
                             name='sumPgi'
                             type='number'
-                            value={Number(data.sumPgi)}
+                            value={data.sumPgi}
                             onChange={handleChange}
                             error={errors.sumPgi}
                         />

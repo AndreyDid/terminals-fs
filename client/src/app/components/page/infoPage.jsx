@@ -9,20 +9,22 @@ const InfoPage = () => {
     const info = useSelector(getInfo())
     const infoLoading = useSelector(getInfoLoadingStatus())
     return (
-        <div className='container justify-content-center'>
-            <div className='flex-column'>
-                <div className='d-grid mx-auto mt-4 mb-4'>
-                    <Link to={'/createInfo'} className='btn btn-light border'>+</Link>
+        <div className='container'>
+            <div >
+                <div className="mt-4">
+                        <Link to={'/createInfo'} className='btn btn-light border'>+</Link>
                 </div>
-                {!infoLoading && info.map(i => (
-                    <InfoCard
-                        key={i._id}
-                        info={i.info}
-                        id={i._id}
-                        title={i.title}
-                        urlImg={i.imageUrl}
-                    />
-                ))}
+                <div className='row row-cols-auto row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4'>
+                    {!infoLoading && info.map(i => (
+                        <InfoCard
+                            key={i._id}
+                            info={i.info}
+                            id={i._id}
+                            title={i.title}
+                            urlImg={i.imageUrl}
+                        />
+                    ))}
+                </div>
             </div>
             {/*row row-cols-1 row-cols-md-4 g-4*/}
             {/*           <div className="">*/}

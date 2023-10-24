@@ -12,6 +12,7 @@ import SelectDataField from "../inputs/selectDataField";
 import useTerminals from "../../hooks/useTerminals";
 import _ from "lodash";
 import Loader from "../common/loader";
+import { useLocation } from "react-router-dom"
 // import history from "../../utils/history";
 
 const EditTerminalPage = () => {
@@ -142,7 +143,6 @@ const EditTerminalPage = () => {
 
         const sumTerminalDefault = setting[0].sumTerminal
         const sumPgiDefault = setting[0].sumPgi
-
         const handleSubmit = async (e) => {
             e.preventDefault()
             const worksPrice = data.works.map(s => s.sum)
@@ -159,12 +159,11 @@ const EditTerminalPage = () => {
                 body: data.body.value,
                 sum: data.body.label === 'ПГИ' ? Number(sumPgiDefault) + allWorksPrice : Number(sumTerminalDefault) + allWorksPrice
             }
-            dispatch(
-                updateTerminal({...newData})
-            )
+            console.log(newData)
+            dispatch(updateTerminal({...newData}))
             history.goBack()
         }
-        console.log(data)
+        // console.log(data)
         return (
             <>
                 {!isLoading && !bodyLoading && !workLoading && (
