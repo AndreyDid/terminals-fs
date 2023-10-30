@@ -10,9 +10,9 @@ import useTerminals from "../../hooks/useTerminals";
 import history from "../../utils/history";
 import PropTypes from "prop-types";
 import Select from "react-select";
-import {createTerminal, removeTerminal, updateTerminal} from "../../store/terminals";
+import {removeTerminal} from "../../store/terminals";
 import Modal from "../modal";
-import CreateTerminal from "../page/createTerminal";
+
 
 const TerminalsTable = ({terminals, extraWorks}) => {
     const [btnOn, setBtnOn] = useState(true)
@@ -167,8 +167,8 @@ const TerminalsTable = ({terminals, extraWorks}) => {
             <table className="table table-sm table align-middle">
                 <thead>
                 <tr>
-                    <th scope="col">№</th>
-                    <th scope="col">
+                    <th scope="col" className='col-1'>№</th>
+                    <th scope="col" className='col-2'>
                         <div>
                             <Link className='btn btn-light btn-sm border d-flex justify-content-between'
                                   to={'/createBody'}>
@@ -181,7 +181,7 @@ const TerminalsTable = ({terminals, extraWorks}) => {
                             </Link>
                         </div>
                     </th>
-                    <th scope="col">
+                    <th scope="col" colSpan='1'>
                         <Link className='btn btn-light border btn-sm d-flex justify-content-between'
                               to={'/createWorks'}>
                             <span>
@@ -192,29 +192,32 @@ const TerminalsTable = ({terminals, extraWorks}) => {
                             </span>
                         </Link>
                     </th>
-                    <th scope='row' colSpan='3'>
+                    <th scope='col' className='col-1' colSpan='2'>
                         {!showModal && (
-
-                            <button className='btn btn-light border btn-sm fw-bold' onClick={handleShowModal}>
-                                Цена
+                            <button type='button'
+                                    className='btn btn-light border btn-sm d-flex justify-content-between fw-bold'
+                                    data-bs-toggle="tooltip" data-bs-placement="top"
+                                    title="Обновить цену терминалов в месяце"
+                                    onClick={handleShowModal}>
+                <span>
+                Цена
+                </span>
                             </button>
-
                         )}
                         {showModal && (
                             <Modal terminals={filteredTerminal} showModal={showModal} setShowModal={setShowModal}
                                    dispatch={dispatch}
                                    setting={setting}/>
-                            )}
-                            </th>
-                        <th scope="col"></th>
-                        {/*{showModal ?*/}
-                        {/*    <th scope="col">*/}
-                        {/*        <Modal terminals={filteredTerminal} showModal={showModal} dispatch={dispatch}*/}
-                        {/*               setting={setting}/>*/}
-                        {/*    </th>*/}
-                        {/*    :*/}
-                        {/*    <th scope="col">Цена</th>*/}
-                        {/*}*/}
+                        )}
+                    </th>
+                    {/*{showModal ?*/}
+                    {/*    <th scope="col">*/}
+                    {/*        <Modal terminals={filteredTerminal} showModal={showModal} dispatch={dispatch}*/}
+                    {/*               setting={setting}/>*/}
+                    {/*    </th>*/}
+                    {/*    :*/}
+                    {/*    <th scope="col">Цена</th>*/}
+                    {/*}*/}
                 </tr>
                 </thead>
                 <tbody>
@@ -322,7 +325,7 @@ const TerminalsTable = ({terminals, extraWorks}) => {
                 </tbody>
             </table>
         </div>
-)
+    )
 }
 TerminalsTable.propTypes = {
     terminals: PropTypes.array,

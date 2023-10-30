@@ -14,7 +14,7 @@ const rootReducer = combineReducers({
     extraWorks: extraWorksReducer,
     info: infoReducer,
     user: usersReducer,
-    setting: settingReducer
+    setting: settingReducer,
 });
 
 export function createStore() {

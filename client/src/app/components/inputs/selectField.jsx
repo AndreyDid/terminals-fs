@@ -1,6 +1,8 @@
 import React from 'react'
 import Select from "react-select";
 import PropTypes from "prop-types";
+import CreatableSelect from "react-select/creatable";
+import login from "../../layouts/login";
 
 const SelectField = ({
                          label,
@@ -9,7 +11,9 @@ const SelectField = ({
                          options,
                          name,
                          error,
-                         placeholder
+                         placeholder,
+                         isSearchable,
+                         isCreatable
                      }) => {
     const handleChange = value => {
         onChange({name, value})
@@ -31,17 +35,31 @@ const SelectField = ({
             <div className="form-label">
                 {label}
             </div>
-            <Select
-                styles={style}
-                className={'border border-1 rounded-2 ' + (error ? 'border-danger' : 'border-1')}
-                isSearchable={false}
-                closeMenuOnSelect={true}
-                defaultValue={defaultValue}
-                options={optionsArray}
-                onChange={handleChange}
-                name={name}
-                placeholder={placeholder}
-            />
+            {isCreatable ? (
+                <CreatableSelect
+                    styles={style}
+                    className={'border border-1 rounded-2 ' + (error ? 'border-danger' : 'border-1')}
+                    isSearchable={isSearchable}
+                    closeMenuOnSelect={true}
+                    defaultValue={defaultValue}
+                    options={optionsArray}
+                    onChange={handleChange}
+                    name={name}
+                    placeholder={placeholder}
+                />
+            ) : (
+                <Select
+                    styles={style}
+                    className={'border border-1 rounded-2 ' + (error ? 'border-danger' : 'border-1')}
+                    isSearchable={isSearchable}
+                    closeMenuOnSelect={true}
+                    defaultValue={defaultValue}
+                    options={optionsArray}
+                    onChange={handleChange}
+                    name={name}
+                    placeholder={placeholder}
+                />
+            )}
         </div>
     )
 }
@@ -53,6 +71,9 @@ SelectField.propTypes = {
     error: PropTypes.string,
     options: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     placeholder: PropTypes.string,
+    isSearchable: PropTypes.bool,
+    isClearable: PropTypes.bool,
+
 };
 
 export default SelectField

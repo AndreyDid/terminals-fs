@@ -88,13 +88,17 @@ const Modal = ({terminals, dispatch, setting, showModal, setShowModal}) => {
             dispatch(updateTerminal(newTerm))
         })
     }
-const handleShow = () => {
+    const handleShow = () => {
         setShowModal(false)
-}
+    }
     return (
         <>
-            <button type='button' className='btn btn-light border btn-sm d-flex justify-content-between fw-bold' data-bs-toggle="tooltip" data-bs-placement="top" title="Обновить цену терминалов в месяце"
-                     onClick={handleSubmit}>Обновить
+            <button type='button' className='btn btn-light border btn-sm d-flex justify-content-between fw-bold'
+
+                    onClick={handleSubmit}>
+                <span>
+                Обновить
+                </span>
             </button>
         </>
     )

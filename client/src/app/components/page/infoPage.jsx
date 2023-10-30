@@ -9,12 +9,18 @@ const InfoPage = () => {
     const info = useSelector(getInfo())
     const infoLoading = useSelector(getInfoLoadingStatus())
     return (
-        <div className='container'>
-            <div >
-                <div className="mt-4">
-                        <Link to={'/createInfo'} className='btn btn-light border'>+</Link>
-                </div>
+        <div className='container mt-2'>
+            <div>
                 <div className='row row-cols-auto row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4'>
+                    <div className='col'>
+                        <Link to={'/createInfo'}>
+                            <div className="card h-100 w-100 d-flex justify-content-center align-items-center btn btn-light">
+                                <div className=''>
+                                    <i className="bi bi-file-plus text-secondary" style={{fontSize: 200}}></i>
+                                </div>
+                            </div>
+                        </Link>
+                    </div>
                     {!infoLoading && info.map(i => (
                         <InfoCard
                             key={i._id}

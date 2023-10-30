@@ -84,6 +84,7 @@ const CreateTerminal = () => {
             setNumberTo({number: value})
         }
     };
+
     const handleChangeEnd = (target) => {
         setNumberTo((prevState) => ({...prevState, [target.name]: target.value}));
     };
@@ -104,7 +105,7 @@ const CreateTerminal = () => {
     }, [data, isLoading, setIsLoading])
 
     const handleIncrement = useCallback(() => {
-        return setNumberTo(prevState => ({...numberTo, number: Number(numberTo.number) + Number(1)}))
+        return setNumberTo(prevState => ({...prevState, number: Number(numberTo.number) + Number(1)}))
     }, [numberTo])
 
     function filterName(arr) {
@@ -128,7 +129,6 @@ const CreateTerminal = () => {
             value: b._id,
             sum: b.sum
         }))
-
         const handleSubmit = async (e) => {
             e.preventDefault();
             const worksPrice = data.works.map(s => s.sum)
@@ -140,7 +140,9 @@ const CreateTerminal = () => {
                 const newData = {
                     ...data,
                     number: Number(i),
-                    singleOrder: Number(data.number) < numberTo.number ? orderId : '',
+                    city: data.city,
+                    // singleOrder: Number(data.number) < numberTo.number ? orderId : '',
+                    singleOrder: orderId,
                     works: data.works.map(w => w.value),
                     imageUrl: imageUrl,
                     body: data.body.value,

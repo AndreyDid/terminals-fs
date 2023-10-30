@@ -12,7 +12,6 @@ import SelectDataField from "../inputs/selectDataField";
 import useTerminals from "../../hooks/useTerminals";
 import _ from "lodash";
 import Loader from "../common/loader";
-import { useLocation } from "react-router-dom"
 // import history from "../../utils/history";
 
 const EditTerminalPage = () => {
@@ -159,11 +158,10 @@ const EditTerminalPage = () => {
                 body: data.body.value,
                 sum: data.body.label === 'ПГИ' ? Number(sumPgiDefault) + allWorksPrice : Number(sumTerminalDefault) + allWorksPrice
             }
-            console.log(newData)
             dispatch(updateTerminal({...newData}))
             history.goBack()
         }
-        // console.log(data)
+
         return (
             <>
                 {!isLoading && !bodyLoading && !workLoading && (
@@ -215,6 +213,8 @@ const EditTerminalPage = () => {
                                 options={bodyList}
                                 onChange={handleChange}
                                 defaultValue={data.body}
+                                isSearchable={false}
+                                isCreatable={true}
                                 error={errors.body}
                             />
                             <MultiSelectField
