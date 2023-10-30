@@ -11,13 +11,11 @@ const InfoPage = () => {
     return (
         <div className='container mt-2'>
             <div>
-                <div className='row row-cols-auto row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4'>
+                <div className='row row-cols-2 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4'>
                     <div className='col'>
                         <Link to={'/createInfo'}>
                             <div className="card h-100 w-100 d-flex justify-content-center align-items-center btn btn-light">
-                                <div className=''>
                                     <i className="bi bi-file-plus text-secondary" style={{fontSize: 200}}></i>
-                                </div>
                             </div>
                         </Link>
                     </div>
