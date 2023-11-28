@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "./button";
 import history from "../../utils/history";
+import { PORT } from "../page/createTerminal";
 
 const InfoCard = ({urlImg, title, info, id}) => {
 
@@ -34,7 +35,7 @@ const InfoCard = ({urlImg, title, info, id}) => {
                         onClick={() => handleClickInfo(id)}
                     />
                 </div>
-                <img src={urlImg ? `http://82.148.18.40${urlImg}` : 'images/no_img.jpg'}
+                <img src={urlImg ? `${PORT}${urlImg}` : 'images/no_img.jpg'}
                      className="card-img-top border-bottom" alt={urlImg}/>
                 <div className="card-body">
                     <h5 className="card-title">{title}</h5>

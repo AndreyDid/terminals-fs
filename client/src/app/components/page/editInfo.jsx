@@ -79,7 +79,7 @@ const EditInfo = () => {
                             />
                         </div>
                         <img className='img-thumbnail mb-2'
-                             src={data.imageUrl !== undefined ? src=`${PORT}${data.imageUrl}` : '/images/no_img.jpg'}
+                             src={data.imageUrl !== undefined ? `${PORT}${data.imageUrl}` : '/images/no_img.jpg'}
                              alt={data.imageUrl}/>
                         <TextField
                             label='Заголовок'
