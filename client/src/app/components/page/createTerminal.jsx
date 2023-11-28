@@ -11,10 +11,13 @@ import useTerminals from "../../hooks/useTerminals";
 import _ from "lodash";
 import {nanoid} from "nanoid";
 import axios from "../../../axios";
+import FileUpload from "../../../fileUpload";
+
+export const PORT = 'http://localhost:8080'
 
 const CreateTerminal = () => {
     const inputFileRef = useRef(null)
-    const [imageUrl, setImageUrl] = useState(null)
+    const [imageUrl, setImageUrl] = useState([])
 
     const [value, setValue] = useState('')
 
@@ -156,17 +159,27 @@ const CreateTerminal = () => {
 
         const handleChangeFile = async (event) => {
             try {
+                // const formData = new FormData()
+                // const file = event.target.files[0]
+                // formData.append('image', file)
+                // const {data} = await axios.post('/uploads', formData)
+                // setImageUrl(data.url)
                 const formData = new FormData()
-                const file = event.target.files[0]
-                formData.append('image', file)
+                const files = Array.from(event.target.files)
+                files.forEach(file => {
+                    formData.append('image', file)
+                })
                 const {data} = await axios.post('/uploads', formData)
+                console.log(formData)
                 setImageUrl(data.url)
             } catch (error) {
                 console.warn(error)
                 alert('Ошибка при загрузке файла')
             }
         }
-
+        console.log(imageUrl)
+// const allFile = axios.get('/files')
+//         console.log(allFile)
         const onClickRemoveImage = () => {
             setImageUrl('')
         }
@@ -176,6 +189,7 @@ const CreateTerminal = () => {
                 <h2 className='text-secondary'>Новый терминал</h2>
                 {/*<YourComponent onChange={getImage}/>*/}
                 {/*<UploadSelectel/>*/}
+                {/*<FileUpload/>*/}
                 {!isLoading && (
                     <form onSubmit={handleSubmit}>
                         <SelectDataField
@@ -185,7 +199,7 @@ const CreateTerminal = () => {
                             handleChange={handleChange}
                         />
                         <div className='d-flex justify-content-between mb-2'>
-                            <input ref={inputFileRef} type="file" onChange={handleChangeFile} hidden/>
+                            <input multiple ref={inputFileRef} type="file" onChange={handleChangeFile} hidden/>
                             <Button
                                 label='Добавить фото'
                                 color="light"
@@ -207,7 +221,7 @@ const CreateTerminal = () => {
                             )}
                         </div>
                         {imageUrl && (
-                            <img className='img-thumbnail mb-2' src={`http://82.148.18.40${imageUrl}`}
+                            <img className='img-thumbnail mb-2' src={`${PORT}${imageUrl}`}
                                  alt="Uploaded"/>
                         )}
                         <div className='d-flex'>

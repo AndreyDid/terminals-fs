@@ -12,6 +12,7 @@ import SelectDataField from "../inputs/selectDataField";
 import useTerminals from "../../hooks/useTerminals";
 import _ from "lodash";
 import Loader from "../common/loader";
+import {PORT} from "./createTerminal";
 // import history from "../../utils/history";
 
 const EditTerminalPage = () => {
@@ -180,79 +181,85 @@ const EditTerminalPage = () => {
                                     />
                                 </div>
                             </div>
-                            <SelectDataField
-                                month={month}
-                                year={year}
-                                data={data}
-                                handleChange={handleChange}
-                            />
-                            {data.imageUrl !== null && (
-                                <img className='img-thumbnail' src={`http://82.148.18.40${data.imageUrl}`}
-                                     alt={data.imageUrl}/>
-                            )}
-                            <TextField
-                                type='number'
-                                count={true}
-                                label='№ терминала'
-                                name='number'
-                                value={data.number}
-                                onChange={handleChange}
-                                increment={handleIncrement}
-                                error={errors.number}
-                            />
-                            <TextField
-                                type='text'
-                                label='Город'
-                                name='city'
-                                value={data.city}
-                                onChange={handleChange}
-                            />
-                            <SelectField
-                                label='Корпус'
-                                name="body"
-                                options={bodyList}
-                                onChange={handleChange}
-                                defaultValue={data.body}
-                                isSearchable={false}
-                                isCreatable={true}
-                                error={errors.body}
-                            />
-                            <MultiSelectField
-                                label='Выбрать доработки'
-                                defaultOption='Доработки...'
-                                name='works'
-                                options={worksList}
-                                onChange={handleChange}
-                                defaultValue={data.works}
-                                error={errors.works}
-                            />
-                            <TextField
-                                label='Сумма'
-                                type='number'
-                                name='sum'
-                                value={data.body.label === 'ПГИ' ? Number(sumPgiDefault) : Number(sumTerminalDefault)}
-                                onChange={handleChange}
-                                isDisabled={true}
-                                error={errors.sum}
-                            />
-                            <div className="d-flex justify-content-between">
-                                <Button
-                                    type="submit"
-                                    color="light"
-                                    rounded="rounded-1"
-                                    border="border"
-                                    label="OK"
-                                    disabled={!isValid}
-                                />
-                                <Button
-                                    type="button"
-                                    color="light"
-                                    onClick={() => history.goBack()}
-                                    icon={<i className="bi bi-x-lg"></i>}
-                                    border='border'
-                                    rounded="rounded-1"
-                                />
+                            <div className=''>
+                                <div className='mb-4'>
+                                    {data.imageUrl !== null && (
+                                        <img className='img-thumbnail' src={`${PORT}${data.imageUrl}`}
+                                             alt={data.imageUrl}/>
+                                    )}
+                                </div>
+                                <div>
+                                    <SelectDataField
+                                        month={month}
+                                        year={year}
+                                        data={data}
+                                        handleChange={handleChange}
+                                    />
+                                    <TextField
+                                        type='number'
+                                        count={true}
+                                        label='№ терминала'
+                                        name='number'
+                                        value={data.number}
+                                        onChange={handleChange}
+                                        increment={handleIncrement}
+                                        error={errors.number}
+                                    />
+                                    <TextField
+                                        type='text'
+                                        label='Город'
+                                        name='city'
+                                        value={data.city}
+                                        onChange={handleChange}
+                                    />
+                                    <SelectField
+                                        label='Корпус'
+                                        name="body"
+                                        options={bodyList}
+                                        onChange={handleChange}
+                                        defaultValue={data.body}
+                                        isSearchable={false}
+                                        isCreatable={true}
+                                        error={errors.body}
+                                    />
+                                    <MultiSelectField
+                                        label='Выбрать доработки'
+                                        defaultOption='Доработки...'
+                                        name='works'
+                                        options={worksList}
+                                        onChange={handleChange}
+                                        defaultValue={data.works}
+                                        error={errors.works}
+                                    />
+                                    <TextField
+                                        label='Сумма'
+                                        type='number'
+                                        name='sum'
+                                        value={data.body.label === 'ПГИ' ? Number(sumPgiDefault) : Number(sumTerminalDefault)}
+                                        onChange={handleChange}
+                                        isDisabled={true}
+                                        error={errors.sum}
+                                    />
+                                </div>
                             </div>
+                                    <div className="d-flex justify-content-between">
+                                        <Button
+                                            type="submit"
+                                            color="light"
+                                            rounded="rounded-1"
+                                            border="border"
+                                            label="OK"
+                                            disabled={!isValid}
+                                        />
+                                        <Button
+                                            type="button"
+                                            color="light"
+                                            onClick={() => history.goBack()}
+                                            icon={<i className="bi bi-x-lg"></i>}
+                                            border='border'
+                                            rounded="rounded-1"
+                                        />
+                                    </div>
                         </form>
                     </ContainerFormWrapper>
                 )}

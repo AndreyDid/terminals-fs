@@ -17,9 +17,10 @@ const WorksList = ({works, handleSum, sumTerminal, bodyTerminal, setting}) => {
     const listWorksSum = worksList.map(work => work.sum)
     const sumWorks = sumPrice(listWorksSum)
 
-    const updateWorks = sumTerminal - sumWorks - (bodyList.name === 'ПГИ' ? sumPgiDefault : sumTerminalDefault)
 
-    if (!isLoading) {
+    if (!isLoading && bodyList) {
+        const updateWorks = sumTerminal - sumWorks - (bodyList.name === 'ПГИ' ? sumPgiDefault : sumTerminalDefault)
+
         return (
             <div className='d-flex justify-content-between'>
                 <div>

@@ -4,7 +4,6 @@ import Terminals from "./app/layouts/terminals";
 import CreateTerminal from "./app/components/page/createTerminal";
 import CreateBody from "./app/components/page/createBody";
 import CreateWorks from "./app/components/page/createWorks";
-import './App.css';
 import AppLoader from "./app/components/ui/hoc/appLoader";
 import EditTerminalPage from "./app/components/page/editTerminalPage";
 import EditWorkPage from "./app/components/page/editWorkPage";

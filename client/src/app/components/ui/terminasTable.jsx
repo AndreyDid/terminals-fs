@@ -94,10 +94,10 @@ const TerminalsTable = ({terminals, extraWorks}) => {
         history.push(history.location.pathname + `${id}/editTerminal`)
     }
 
-    // const handleClickTerminalInfo = (id) => {
-    //     // history.push(history.location.pathname + `/${id}/editTerminal`)
-    //     history.push(history.location.pathname + `${id}/terminalInfo`)
-    // }
+    const handleClickTerminalInfo = (id) => {
+        // history.push(history.location.pathname + `/${id}/editTerminal`)
+        history.push(history.location.pathname + `${id}/terminalInfo`)
+    }
 
     const handleClickExtraWorks = (id) => {
         history.push(history.location.pathname + `${id}/editExtraWorks`)
@@ -224,7 +224,16 @@ const TerminalsTable = ({terminals, extraWorks}) => {
                 {filteredTerminal.length > 0 && filteredTerminal.map(t => (
                     <tr key={t._id}>
                         <td key={t._id} className='align-items-center'>
-                            <p className='m-0 p-0 fw-bold'>{t.number}</p>
+                            {/*<p className='m-0 p-0 fw-bold'>{t.number}</p>*/}
+                        <Button
+                        label={t.number}
+                        type='button'
+                        color='light'
+                        border="border"
+                        size='btn-sm'
+                        rounded='rounded-1'
+                        onClick={() => handleClickTerminalInfo(t._id)}
+                        />
                         </td>
                         <td>
                             <Body id={t.body}/>

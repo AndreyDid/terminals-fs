@@ -29,11 +29,20 @@ app.use('/uploads', express.static('uploads'))
 
 app.use("/api", routes);
 
-app.post('/uploads', upload.single('image'), (req, res) => {
+// app.post('/uploads', upload.single('image'), (req, res) => {
+//   res.json({
+//     url: `/uploads/${req.file.originalname}`
+//   })
+// })
+app.post('/uploads', upload.array('image'), (req, res) => {
   res.json({
-    url: `/uploads/${req.file.originalname}`
+    url: `/uploads/${req.files.originalname}`
   })
 })
+
+// app.get('/files', function(req, res){
+//   res.sendFile('/uploads/' + req.params.filename);
+// })
 
 const PORT = config.get("port") ?? 8080;
 
