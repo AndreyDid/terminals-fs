@@ -6,6 +6,7 @@ import useTerminals from "../../hooks/useTerminals";
 import TextField from "../inputs/textField";
 import {useSelector} from "react-redux";
 import {getInfoById, removeInfo, updateInfo} from "../../store/info";
+import { PORT } from "./createTerminal";
 
 const EditInfo = () => {
     const [data, setData] = useState()
@@ -78,7 +79,7 @@ const EditInfo = () => {
                             />
                         </div>
                         <img className='img-thumbnail mb-2'
-                             src={data.imageUrl !== undefined ? `http://82.148.18.40${data.imageUrl}` : '/images/no_img.jpg'}
+                             src={data.imageUrl !== undefined ? src=`${PORT}${data.imageUrl}` : '/images/no_img.jpg'}
                              alt={data.imageUrl}/>
                         <TextField
                             label='Заголовок'

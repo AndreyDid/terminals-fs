@@ -13,7 +13,7 @@ import {nanoid} from "nanoid";
 import axios from "../../../axios";
 import FileUpload from "../../../fileUpload";
 
-export const PORT = 'http://localhost:8080'
+export const PORT = 'http://192.168.1.79'
 
 const CreateTerminal = () => {
     const inputFileRef = useRef(null)
